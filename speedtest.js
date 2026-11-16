@@ -7,7 +7,6 @@ async function main() {
 
   if (!url) {
     console.error('Использование: node speedtest.js <url>')
-    console.error('Пример: node speedtest.js https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg')
     process.exit(1)
   }
 
@@ -36,7 +35,6 @@ async function main() {
         throw new Error(`HTTP ${response.status} ${response.statusText}`)
       }
 
-      // Дожидаемся полного ответа
       const buffer = await response.arrayBuffer()
       const elapsed = performance.now() - start
 
